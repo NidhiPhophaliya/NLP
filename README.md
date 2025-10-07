@@ -77,3 +77,93 @@ This project demonstrates how a simple combination of **vector space modeling** 
    ```bash
    git clone https://github.com/yourusername/ml-health-search.git
    cd ml-health-search
+
+
+# 💬 Sentiment Analysis using VADER
+
+A Python-based **rule-driven Sentiment Analysis System** built with the **VADER (Valence Aware Dictionary and sEntiment Reasoner)** model from NLTK.  
+It classifies text into **Positive**, **Negative**, or **Neutral** sentiments, providing detailed intensity scores for each emotion.
+
+This enhanced version includes **colored terminal output**, **interactive input options**, and **summary statistics** to give a complete, real-time understanding of text sentiment — whether it’s tweets, reviews, or healthcare feedback.
+
+---
+
+## 🧠 Overview
+
+Sentiment analysis is a form of **Natural Language Processing (NLP)** that helps computers interpret human emotions from text.  
+In this project, we use a **rule-based approach** that assigns predefined sentiment scores to words and combines them to infer the overall sentiment.
+
+VADER is ideal for analyzing:
+- Short, informal text (tweets, reviews, feedback)
+- Sentences containing slang, emojis, or emphasis (like “great!!!” or “BAD 😡”)
+- Real-time streaming data (social media, chatbot logs)
+
+---
+
+## 🚀 Features
+
+✅ Rule-based sentiment analysis (no training required)  
+✅ Supports custom input or text file analysis  
+✅ Color-coded terminal output for clarity  
+✅ Displays positive, neutral, negative, and compound scores  
+✅ Summary of overall sentiment distribution  
+✅ Fully offline, lightweight, and fast  
+
+---
+
+## 🧩 Technologies Used
+
+| Component | Description | Library |
+|------------|--------------|----------|
+| **NLTK** | Natural Language Toolkit, provides VADER sentiment analyzer | `nltk` |
+| **VADER Lexicon** | Predefined dictionary of sentiment-weighted words | Built into NLTK |
+| **Colorama** | Adds terminal colors for better visualization | `colorama` |
+| **Python 3.x** | Core programming environment | - |
+
+---
+
+## ⚙️ How It Works
+
+### Step 1 — Preprocessing
+Each sentence is cleaned internally by VADER (tokenization, punctuation handling, emphasis detection).
+
+### Step 2 — Scoring
+VADER calculates:
+- **pos** — proportion of positive words  
+- **neu** — proportion of neutral words  
+- **neg** — proportion of negative words  
+- **compound** — overall normalized polarity score in range **[-1, 1]**
+
+### Step 3 — Classification
+| Range of Compound Score | Label |
+|--------------------------|--------|
+| ≥ 0.05 | Positive 😊 |
+| ≤ -0.05 | Negative 😠 |
+| otherwise | Neutral 😐 |
+
+### Step 4 — Display
+The result is printed with:
+- Detailed sentiment breakdown  
+- Final label (Positive / Negative / Neutral)  
+- Color-coded text for easy interpretation  
+
+### Step 5 — Summary Statistics
+At the end, total counts and percentages of each sentiment category are displayed.
+
+---
+
+## 🧮 Algorithm Summary
+
+\[
+\text{Sentiment Label} =
+\begin{cases}
+\text{Positive,} & \text{if compound ≥ 0.05} \\
+\text{Negative,} & \text{if compound ≤ -0.05} \\
+\text{Neutral,} & \text{otherwise}
+\end{cases}
+\]
+
+Where:
+- `compound` = weighted normalized sum of all sentiment lexicon ratings.
+
+---
