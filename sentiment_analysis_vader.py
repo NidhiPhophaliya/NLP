@@ -1,23 +1,4 @@
-"""
-sentiment_analysis_vader_extended.py
-------------------------------------
 
-An enhanced rule-based sentiment analysis tool using VADER 
-(Valence Aware Dictionary and sEntiment Reasoner) from NLTK.
-
-Features:
-- Analyzes multiple text samples or custom user input
-- Calculates detailed sentiment scores (positive, negative, neutral, compound)
-- Displays color-coded terminal results for readability
-- Provides summary statistics on sentiment distribution
-- Optionally reads text from a file (one sentence per line)
-
-Dependencies:
-    pip install nltk colorama
-
-Author: [Your Name]
-Date: [YYYY-MM-DD]
-"""
 
 import nltk
 from nltk.sentiment.vader import SentimentIntensityAnalyzer
